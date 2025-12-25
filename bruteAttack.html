@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brute Force Demo</title>
+</head>
+<body>
+<center>
+    <div>
+        <p>
+            <label>Username:</label>
+            <input type="text" id="username">
+        </p>
+        <p>
+            <label>Password:</label>
+            <input type="password" id="password">
+        </p>
+        <p>
+            <button type="button" onclick="logIn()">Log In</button>
+        </p>
+        <p>
+            <button type="button" onclick="startAttack()">Start Attack</button>
+        </p>
+    </div>
+
+    <div id="hidden" style="display:none;">
+        <b>Hidden area</b>
+    </div>
+
+    <div id="log"></div>
+</center>
+
+<script>
+    const correctPassword = "pwd123";
+    const possiblePasswords = [
+        "admin",
+        "admin123",
+        "123456",
+        "qwerty",
+        "pwd123"
+    ];
+
+    let attempt = 0;
+    let intervalId = null;
+
+    function logIn() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        if (username === "admin" && password === correctPassword) {
+            document.getElementById("hidden").style.display = "block";
+            log("Login success");
+        } else {
+            log("Login failed");
+        }
+    }
+
+    function startAttack() {
+        attempt = 0;
+        document.getElementById("log").innerHTML = "";
+
+        intervalId = setInterval(bruteStep, 1000);
+    }
+
+    function bruteStep() {
+        if (attempt >= possiblePasswords.length) {
+            log("Attack finished. Password not found.");
+            clearInterval(intervalId);
+            return;
+        }
+
+        const currentPassword = possiblePasswords[attempt];
+        log("Attempt " + (attempt + 1) + ": " + currentPassword);
+
+        if (currentPassword === correctPassword) {
+            log("Password found: " + currentPassword);
+            clearInterval(intervalId);
+            return;
+        }
+
+        attempt++;
+    }
+
+    function log(message) {
+        document.getElementById("log").innerHTML += message + "<br>";
+    }
+</script>
+</body>
+</html>
