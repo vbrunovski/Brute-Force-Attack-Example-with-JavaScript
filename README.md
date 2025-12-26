@@ -1,5 +1,4 @@
-# Brute-Force-Attack-Example-with-JavaScript
-
-Please be informed that this is not illegal to use bruteforce against public websites and api.
-This example is just to demonstrate what is a bruteforce and how it works.
-Stay tuned.
+# JavaScript API Examples
+In this section I will examples of code related to APIs and different att@cks on the servers.
+Most of the codes in this section is HTML, JavaScript + different libraries like Axios, Faker, Chance and etc.
+Please be informed that this is illegal to attack any public web sites and APIs.
