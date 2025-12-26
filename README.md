@@ -1,5 +1,5 @@
 # Brute-Force-Attack-Example-with-JavaScript
 
-Please be informed tha this is not illegal to use bruteforce agains public website and api.
-This example is just to demonstrate what is a brureforce and it works.
+Please be informed that this is not illegal to use bruteforce against public websites and api.
+This example is just to demonstrate what is a bruteforce and how it works.
 Stay tuned.
